@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMP 7507 Group 5 - UCL Football Analytics</title>
+    <title>My Tableau Dashboards</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -23,14 +23,33 @@
             height: 100%;
             display: block;
         }
-        /* Style for video placeholder */
-        .video-placeholder {
+        /* Style for video container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width) */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #000; /* Black background for video area */
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures video fits within the bounds without cropping */
+        }
+        /* Style for video placeholder text if video doesn't load */
+        .video-placeholder-text {
             background-color: #e0e0e0;
             color: #616161;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 400px; /* Adjust as needed for video */
+            min-height: 400px; /* Fallback height */
             border-radius: 0.5rem;
             font-size: 1.25rem;
             font-weight: bold;
@@ -79,7 +98,7 @@
             <div class="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 1: Match Level Analysis</h2>
                 <p class="text-gray-700 mb-4">
-                    This dashboard displays match-level data, including key statistics and player formation.
+                    This dashboard displays match-level data, including key statistics and trends.
                 </p>
                 <div class='tableauPlaceholder' id='viz1753303558068'>
                     <noscript>
@@ -165,7 +184,7 @@
                 <div class='tableauPlaceholder' id='viz1753379930245'>
                     <noscript>
                         <a href='#'>
-                            <img alt='COMPARE_PLAYER ' src='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard2/1_rss.png' style='border: none' />
+                            <img alt='COMPARE_PLAYER ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;uc&#47;ucl_player_dash&#47;Dashboard2&#47;1_rss.png' style='border: none' />
                         </a>
                     </noscript>
                     <object class='tableauViz' style='width:100%;min-height:800px;height:100%;'>
@@ -204,12 +223,10 @@
                 <p class="text-lg">
                     This section will feature a dynamic visualization created using Python. It aims to provide a unique and interactive perspective on the data that complements our static dashboards.
                 </p>
-<!--                 <div class="video-placeholder mt-8">
-                    Video Visualization Coming Soon!
-                </div> -->
                 <div class="video-container mt-8">
                     <!-- REPLACE 'YOUR_VIDEO_FILE_URL.mp4' with the actual URL of your video from GitHub -->
-                    <video controls width="100%" height="100%" poster="https://placehold.co/640x360/cccccc/333333?text=Video+Thumbnail">
+<!--                     <video controls width="80%" height="80%" poster="https://placehold.co/640x360/cccccc/333333?text=Video+Thumbnail"> -->
+                    <video controls width="80%" height="80%">
                         <source src="vid.mp4" type="video/mp4">
                         <div class="video-placeholder-text">Your browser does not support the video tag.</div>
                     </video>
@@ -218,7 +235,43 @@
                 </div>
             </div>
         </section>
-
+        
+        <!-- Section 4: Team Members -->
+        <section class="mb-12 p-6 bg-pink-50 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold text-pink-800 mb-4 text-center">Our Team</h2>
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left text-gray-500">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Student Name</th>
+                            <th scope="col" class="px-6 py-3">Student ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Lee Wing Chun</td>
+                            <td class="px-6 py-4">3036212881</td>
+                        </tr>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Pan Jia Chen</td>
+                            <td class="px-6 py-4">3036383094</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Md Tanjeeb Hossain</td>
+                            <td class="px-6 py-4">3036199560</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Asif Salam</td>
+                            <td class="px-6 py-4">3036383446</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">A M M Mutasim Moyen</td>
+                            <td class="px-6 py-4">3036383226</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
         <footer class="mt-12 text-center text-gray-500 text-sm">
             <p>COMP 7507 Group 5</p>
         </footer>
