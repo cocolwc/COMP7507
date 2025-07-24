@@ -7,88 +7,56 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom styles for Inter font */
         body {
             font-family: 'Inter', sans-serif;
         }
-        /*
-         * The .tableau-responsive-container CSS is primarily for simple iframe embeds.
-         * The full Tableau Public embed code (like the one for Dashboard 2 and 3 below)
-         * includes its own JavaScript for responsiveness, so this CSS
-         * is not directly applied to it.
-        */
-        .tableau-responsive-container {
-            position: relative;
-            width: 100%;
-            /* This padding-bottom creates the aspect ratio (e.g., 75% for 4:3, 56.25% for 16:9) */
-            /* Adjust this value based on your dashboard's aspect ratio for best fit */
-            padding-bottom: 100%; /* Example: For a 4:3 aspect ratio dashboard */
-            height: 0;
+        .tableauPlaceholder {
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
             overflow: hidden;
-            margin-bottom: 1.5rem; /* Space between dashboards */
-            border-radius: 0.5rem; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: relative;
         }
-        .tableau-responsive-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .tableauPlaceholder object {
             width: 100%;
             height: 100%;
-            border: none; /* Remove default iframe border */
-            border-radius: 0.5rem; /* Rounded corners */
-        }
-        /* Specific styling for Tableau's embed div if needed */
-        .tableauPlaceholder {
-            margin-bottom: 1.5rem; /* Space below the Tableau embed */
-            border-radius: 0.5rem; /* Rounded corners for the container */
-            overflow: hidden; /* Ensures rounded corners apply cleanly */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
-            /* Ensure the Tableau placeholder itself is responsive */
-            width: 100% !important;
-            height: auto !important; /* Let Tableau JS handle specific height */
-        }
-        /* Override Tableau's inline width/height for responsiveness if necessary */
-        .tableauPlaceholder object {
-            width: 100% !important;
-            height: auto !important;
+            display: block;
         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900 p-4 sm:p-8">
     <div class="w-full mx-auto bg-white rounded-lg shadow-xl p-6 sm:p-10">
-        <!-- Header Section -->
         <header class="mb-8 text-center">
             <h1 class="text-4xl sm:text-5xl font-extrabold text-indigo-700 mb-4 rounded-lg p-2">
-                My Interactive Dashboards
+                COMP 7507 - {Title}
             </h1>
             <p class="text-lg sm:text-xl text-gray-600">
                 Explore data visualizations embedded from Tableau Public.
             </p>
         </header>
 
-        <!-- Dashboard Embedding Section -->
         <section class="space-y-12">
-            <!-- Dashboard 1: Match Level Analysis (Original Dashboard) -->
+            <!-- Dashboard 1 -->
             <div class="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 1: Match Level Analysis</h2>
                 <p class="text-gray-700 mb-4">
                     This dashboard displays match-level data, including key statistics and trends.
                 </p>
-                <!-- START OF TABLEAU PUBLIC EMBED CODE -->
-                <div class='tableauPlaceholder' id='viz1753303558068' style='position: relative'>
+                <div class='tableauPlaceholder' id='viz1753303558068'>
                     <noscript>
                         <a href='#'>
-                            <img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ma&#47;match-level-v2-newdata&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+                            <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/ma/match-level-v2-newdata/Dashboard1/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
-                    <object class='tableauViz' style='display:none;'>
+                    <object class='tableauViz' style='width:100%;min-height:800px;height:100%;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
                         <param name='name' value='match-level-v2-newdata&#47;Dashboard1' />
                         <param name='tabs' value='no' />
                         <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ma&#47;match-level-v2-newdata&#47;Dashboard1&#47;1.png' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/ma/match-level-v2-newdata/Dashboard1/1.png' />
                         <param name='animate_transition' value='yes' />
                         <param name='display_static_image' value='yes' />
                         <param name='display_spinner' value='yes' />
@@ -101,39 +69,35 @@
                 <script type='text/javascript'>
                     var divElement = document.getElementById('viz1753303558068');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    // Tableau's provided responsive logic - ADJUSTED FOR HIGHER BOXES
-                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth * 1.0)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth * 1.0)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1200px';} // Increased fixed height for smaller screens
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
                 </script>
-                <!-- END OF TABLEAU PUBLIC EMBED CODE -->
                 <p class="text-sm text-gray-500 mt-2">
                     <a href="https://public.tableau.com/app/profile/coco.lee7482/viz/match-level-v2-newdata/Dashboard1?publish=yes" target="_blank" class="text-indigo-600 hover:underline">View on Tableau Public</a>
                 </p>
             </div>
 
-            <!-- Dashboard 2: Player Details Dashboard -->
+            <!-- Dashboard 2 -->
             <div class="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 2: Player Details</h2>
                 <p class="text-gray-700 mb-4">
                     Explore detailed statistics and performance metrics for individual players.
                 </p>
-                <!-- START OF TABLEAU PUBLIC EMBED CODE -->
-                <div class='tableauPlaceholder' id='viz1753379870330' style='position: relative'>
+                <div class='tableauPlaceholder' id='viz1753379870330'>
                     <noscript>
                         <a href='#'>
-                            <img alt='PLAYER_DETAILS ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;uc&#47;ucl_player_dash&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+                            <img alt='PLAYER_DETAILS ' src='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard1/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
-                    <object class='tableauViz' style='display:none;'>
+                    <object class='tableauViz' style='width:100%;min-height:800px;height:100%;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
                         <param name='name' value='ucl_player_dash&#47;Dashboard1' />
                         <param name='tabs' value='no' />
                         <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;uc&#47;ucl_player_dash&#47;Dashboard1&#47;1.png' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard1/1.png' />
                         <param name='animate_transition' value='yes' />
                         <param name='display_static_image' value='yes' />
                         <param name='display_spinner' value='yes' />
@@ -145,39 +109,35 @@
                 <script type='text/javascript'>
                     var divElement = document.getElementById('viz1753379870330');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    // Tableau's provided responsive logic - ADJUSTED FOR HIGHER BOXES
-                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth * 1.0)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth * 1.0)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1200px';} // Increased fixed height for smaller screens
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
                 </script>
-                <!-- END OF TABLEAU PUBLIC EMBED CODE -->
                 <p class="text-sm text-gray-500 mt-2">
                     <a href="https://public.tableau.com/app/profile/coco.lee7482/viz/ucl_player_dash/Dashboard1" target="_blank" class="text-indigo-600 hover:underline">View on Tableau Public</a>
                 </p>
             </div>
 
-            <!-- Dashboard 3: Compare Player Dashboard -->
+            <!-- Dashboard 3 -->
             <div class="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 3: Compare Player</h2>
                 <p class="text-gray-700 mb-4">
                     Compare performance metrics between different players side-by-side.
                 </p>
-                <!-- START OF TABLEAU PUBLIC EMBED CODE -->
-                <div class='tableauPlaceholder' id='viz1753379930245' style='position: relative'>
+                <div class='tableauPlaceholder' id='viz1753379930245'>
                     <noscript>
                         <a href='#'>
-                            <img alt='COMPARE_PLAYER ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;uc&#47;ucl_player_dash&#47;Dashboard2&#47;1_rss.png' style='border: none' />
+                            <img alt='COMPARE_PLAYER ' src='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard2/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
-                    <object class='tableauViz' style='display:none;'>
+                    <object class='tableauViz' style='width:100%;min-height:800px;height:100%;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
                         <param name='name' value='ucl_player_dash&#47;Dashboard2' />
                         <param name='tabs' value='no' />
                         <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;uc&#47;ucl_player_dash&#47;Dashboard2&#47;1.png' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard2/1.png' />
                         <param name='animate_transition' value='yes' />
                         <param name='display_static_image' value='yes' />
                         <param name='display_spinner' value='yes' />
@@ -189,23 +149,18 @@
                 <script type='text/javascript'>
                     var divElement = document.getElementById('viz1753379930245');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    // Tableau's provided responsive logic - ADJUSTED FOR HIGHER BOXES
-                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth * 1.0)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth * 1.0)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1200px';} // Increased fixed height for smaller screens
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
                 </script>
-                <!-- END OF TABLEAU PUBLIC EMBED CODE -->
                 <p class="text-sm text-gray-500 mt-2">
                     <a href="https://public.tableau.com/app/profile/coco.lee7482/viz/ucl_player_dash/Dashboard2" target="_blank" class="text-indigo-600 hover:underline">View on Tableau Public</a>
                 </p>
             </div>
         </section>
 
-        <!-- Footer Section -->
         <footer class="mt-12 text-center text-gray-500 text-sm">
-            <p>Created with HTML and Tailwind CSS for embedding Tableau Public dashboards.</p>
-            <p>Remember to adjust the `padding-bottom` in `.tableau-responsive-container` in the CSS to match your dashboard's aspect ratio for optimal display.</p>
+            <p>COMP 7507 Group 5</p>
         </footer>
     </div>
 </body>
