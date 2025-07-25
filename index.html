@@ -34,7 +34,7 @@
 
         /* General Tableau object styling for other dashboards (excluding Dashboard 1) */
         .tableauPlaceholder object {
-            width: 100%; /* Make them fill their parent container horizontally */
+            /* The width will be set directly in the object's style attribute for these */
             display: block;
         }
 
@@ -189,7 +189,7 @@
                             <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/ma/match-level-v2-newdata/Dashboard1/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
-                    <object class='tableauViz' style='display:none;'>
+                    <object class='tableauViz' style='display:none; width: 1215px;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
@@ -209,8 +209,7 @@
                 <script type='text/javascript'>
                     var divElement = document.getElementById('viz1753303558068');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    // Applying Dashboard 3c's sizing logic here
-                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}
+                    vizElement.style.height='795px'; 
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -233,7 +232,7 @@
                             <img alt='General DB ' src='https://public.tableau.com/static/images/Fi/FinalWORK/GeneralDB/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
-                    <object class='tableauViz' style='display:none;'>
+                    <object class='tableauViz' style='display:none; width: 1366px;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
@@ -252,16 +251,7 @@
                 <script type='text/javascript'>
                     var divElement = document.getElementById('viz1753459524601');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    if ( divElement.offsetWidth > 800 ) {
-                        vizElement.style.width='1366px';
-                        vizElement.style.height='795px';
-                    } else if ( divElement.offsetWidth > 500 ) {
-                        vizElement.style.width='1366px';
-                        vizElement.style.height='795px';
-                    } else {
-                        vizElement.style.width='100%';
-                        vizElement.style.height='727px';
-                    }
+                    vizElement.style.height='795px'; 
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -282,7 +272,7 @@
                             <img alt='Player DB ' src='https://public.tableau.com/static/images/Fi/FinalWORK/PlayerDB/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
-                    <object class='tableauViz' style='display:none;'>
+                    <object class='tableauViz' style='display:none; width: 1366px;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
@@ -301,16 +291,7 @@
                 <script type='text/javascript'>
                     var divElement = document.getElementById('viz1753459552947');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    if ( divElement.offsetWidth > 800 ) {
-                        vizElement.style.width='1366px';
-                        vizElement.style.height='795px';
-                    } else if ( divElement.offsetWidth > 500 ) {
-                        vizElement.style.width='1366px';
-                        vizElement.style.height='795px';
-                    } else {
-                        vizElement.style.width='100%';
-                        vizElement.style.height='877px';
-                    }
+                    vizElement.style.height='795px'; 
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -331,7 +312,7 @@
                             <img alt='Heatmap DB ' src='https://public.tableau.com/static/images/Fi/FinalWORK/HeatmapDB/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
-                    <object class='tableauViz' style='display:none;'>
+                    <object class='tableauViz' style='display:none; width: 1366px;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
@@ -350,16 +331,7 @@
                 <script type='text/javascript'>
                     var divElement = document.getElementById('viz1753459583895');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    if ( divElement.offsetWidth > 800 ) {
-                        vizElement.style.width='1366px';
-                        vizElement.style.height='795px';
-                    } else if ( divElement.offsetWidth > 500 ) {
-                        vizElement.style.width='1366px';
-                        vizElement.style.height='795px';
-                    } else {
-                        vizElement.style.width='100%';
-                        vizElement.style.height='727px';
-                    }
+                    vizElement.style.height='795px'; 
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -382,7 +354,7 @@
                             <img alt='PLAYER_DETAILS ' src='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard1/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
-                    <object class='tableauViz' style='display:none;'>
+                    <object class='tableauViz' style='display:none; width: 1215px;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
@@ -401,8 +373,7 @@
                 <script type='text/javascript'>
                     var divElement = document.getElementById('viz1753379870330');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    // Applying Dashboard 3c's sizing logic here
-                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}
+                    vizElement.style.height='795px'; 
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -423,7 +394,7 @@
                             <img alt='COMPARE_PLAYER ' src='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard2/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
-                    <object class='tableauViz' style='display:none;'>
+                    <object class='tableauViz' style='display:none; width: 1015px;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
@@ -442,8 +413,7 @@
                 <script type='text/javascript'>
                     var divElement = document.getElementById('viz1753379930245');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    // Applying Dashboard 3c's sizing logic here
-                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}
+                    vizElement.style.height='795px'; 
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
