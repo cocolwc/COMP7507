@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMP 7507 - UCL Football Analytics</title>
     <link rel="icon" href="football_logo.png" type="image/png">
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -14,14 +13,23 @@
         .tableauPlaceholder {
             margin-bottom: 1.5rem;
             border-radius: 0.5rem;
-            overflow: hidden;
+            overflow: hidden; /* This keeps the corners rounded */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 100%;
             position: relative;
         }
+        /* Specific style for the overflowing Tableau dashboard */
+        #viz1753459265486 {
+            overflow-x: auto; /* This will enable horizontal scrolling for this specific Tableau viz */
+        }
+        #viz1753459265486 object {
+            min-width: 2500px; /* Set a minimum width for the Tableau object to ensure it overflows if needed */
+            height: 795px; /* Keep original height or adjust as needed */
+        }
+
         .tableauPlaceholder object {
-            width: 100%;
-            height: 100%;
+            width: 100%; /* Default width for other Tableau objects */
+            height: 100%; /* Default height for other Tableau objects */
             display: block;
         }
         /* Style for video container */
@@ -71,7 +79,6 @@
             </p>
         </header>
 
-        <!-- Section 1: Our Approach -->
         <section class="mb-12 p-6 bg-blue-50 rounded-lg shadow-md">
             <h2 class="text-3xl font-bold text-blue-800 mb-4 text-center">Our Approach</h2>
             <div class="text-gray-700 space-y-4">
@@ -92,12 +99,53 @@
             </div>
         </section>
 
-        <!-- Section 2: Tableau Dashboards -->
         <section class="space-y-12 mb-12">
             <h2 class="text-3xl font-bold text-indigo-700 mb-6 text-center">Tableau Dashboards</h2>
-            <!-- Dashboard 1 -->
+
             <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 1: Match Level Analysis</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 1: UCL 21/22 League Overview</h2>
+                <p class="text-gray-700 mb-4">
+                    This dashboard provides an overview of the UEFA Champions League for the 2021/2022 season, including league-wide statistics and trends.
+                </p>
+                <div class='tableauPlaceholder' id='viz1753459265486' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/uc/ucl_2122_league_overview/Dashboard1/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='ucl_2122_league_overview/Dashboard1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/uc/ucl_2122_league_overview/Dashboard1/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1753459265486');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width='100%'; // Set to 100% to fill its parent div
+                    vizElement.style.height='795px'; // Keep the height consistent, or adjust as needed for this specific viz
+                    
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <p class="text-sm text-gray-500 mt-2">
+                    <a href="https://public.tableau.com/app/profile/md.tanjeeb.hossain/viz/ucl_2122_league_overview/Dashboard1" target="_blank" class="text-indigo-600 hover:underline">View on Tableau Public</a>
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 2: Match Level Analysis</h2>
                 <p class="text-gray-700 mb-4">
                     This dashboard displays match-level data, including key statistics and trends.
                 </p>
@@ -111,10 +159,10 @@
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
-                        <param name='name' value='match-level-v2-newdata&#47;Dashboard1' />
+                        <param name='name' value='match-level-v2-newdata/Dashboard1' />
                         <param name='tabs' value='no' />
                         <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ma&#47;match-level-v2-newdata&#47;Dashboard1&#47;1.png' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/ma/match-level-v2-newdata/Dashboard1/1.png' />
                         <param name='animate_transition' value='yes' />
                         <param name='display_static_image' value='yes' />
                         <param name='display_spinner' value='yes' />
@@ -136,26 +184,176 @@
                 </p>
             </div>
 
-            <!-- Dashboard 2 -->
+            <h3 class="text-2xl font-bold text-gray-700 mt-10 mb-6 text-center">Defensive Strategies</h3>
+
             <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 2: Player Details</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 3a: General Database</h2>
+                <p class="text-gray-700 mb-4">
+                    This dashboard provides a general overview of the data, offering a broad perspective on various football statistics.
+                </p>
+                <div class='tableauPlaceholder' id='viz1753459524601' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='General DB ' src='https://public.tableau.com/static/images/Fi/FinalWORK/GeneralDB/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='FinalWORK/GeneralDB' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Fi/FinalWORK/GeneralDB/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1753459524601');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if ( divElement.offsetWidth > 800 ) {
+                        vizElement.style.width='1366px';
+                        vizElement.style.height='795px';
+                    } else if ( divElement.offsetWidth > 500 ) {
+                        vizElement.style.width='1366px';
+                        vizElement.style.height='795px';
+                    } else {
+                        vizElement.style.width='100%';
+                        vizElement.style.height='727px';
+                    }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <p class="text-sm text-gray-500 mt-2">
+                    <a href="https://public.tableau.com/app/profile/asif.salam8500/viz/FinalWORK/GeneralDB" target="_blank" class="text-indigo-600 hover:underline">View on Tableau Public</a>
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 3b: Player Database</h2>
+                <p class="text-gray-700 mb-4">
+                    This dashboard allows for exploration of player-centric data, providing insights into individual performance.
+                </p>
+                <div class='tableauPlaceholder' id='viz1753459552947' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Player DB ' src='https://public.tableau.com/static/images/Fi/FinalWORK/PlayerDB/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='FinalWORK/PlayerDB' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Fi/FinalWORK/PlayerDB/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1753459552947');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if ( divElement.offsetWidth > 800 ) {
+                        vizElement.style.width='1366px';
+                        vizElement.style.height='795px';
+                    } else if ( divElement.offsetWidth > 500 ) {
+                        vizElement.style.width='1366px';
+                        vizElement.style.height='795px';
+                    } else {
+                        vizElement.style.width='100%';
+                        vizElement.style.height='877px';
+                    }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <p class="text-sm text-gray-500 mt-2">
+                    <a href="https://public.tableau.com/app/profile/asif.salam8500/viz/FinalWORK/PlayerDB" target="_blank" class="text-indigo-600 hover:underline">View on Tableau Public</a>
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 3c: Heatmap Database</h2>
+                <p class="text-gray-700 mb-4">
+                    This dashboard presents heatmaps, visualizing player movement and activity across the field.
+                </p>
+                <div class='tableauPlaceholder' id='viz1753459583895' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Heatmap DB ' src='https://public.tableau.com/static/images/Fi/FinalWORK/HeatmapDB/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='FinalWORK/HeatmapDB' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Fi/FinalWORK/HeatmapDB/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1753459583895');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if ( divElement.offsetWidth > 800 ) {
+                        vizElement.style.width='1366px';
+                        vizElement.style.height='795px';
+                    } else if ( divElement.offsetWidth > 500 ) {
+                        vizElement.style.width='1366px';
+                        vizElement.style.height='795px';
+                    } else {
+                        vizElement.style.width='100%';
+                        vizElement.style.height='727px';
+                    }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <p class="text-sm text-gray-500 mt-2">
+                    <a href="https://public.tableau.com/app/profile/asif.salam8500/viz/FinalWORK/HeatmapDB" target="_blank" class="text-indigo-600 hover:underline">View on Tableau Public</a>
+                </p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-700 mt-10 mb-6 text-center">Player Level</h3>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 4a: Player Details</h2>
                 <p class="text-gray-700 mb-4">
                     Explore detailed statistics and performance metrics for individual players.
                 </p>
                 <div class='tableauPlaceholder' id='viz1753379870330'>
                     <noscript>
                         <a href='#'>
-                            <img alt='PLAYER_DETAILS ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;uc&#47;ucl_player_dash&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+                            <img alt='PLAYER_DETAILS ' src='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard1/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
                     <object class='tableauViz' style='width:100%;min-height:800px;height:100%;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
-                        <param name='name' value='ucl_player_dash&#47;Dashboard1' />
+                        <param name='name' value='ucl_player_dash/Dashboard1' />
                         <param name='tabs' value='no' />
                         <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;uc&#47;ucl_player_dash&#47;Dashboard1&#47;1.png' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard1/1.png' />
                         <param name='animate_transition' value='yes' />
                         <param name='display_static_image' value='yes' />
                         <param name='display_spinner' value='yes' />
@@ -176,26 +374,25 @@
                 </p>
             </div>
 
-            <!-- Dashboard 3 -->
             <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 3: Compare Player</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Dashboard 4b: Compare Player</h2>
                 <p class="text-gray-700 mb-4">
                     Compare performance metrics between different players side-by-side.
                 </p>
                 <div class='tableauPlaceholder' id='viz1753379930245'>
                     <noscript>
                         <a href='#'>
-                            <img alt='COMPARE_PLAYER ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;uc&#47;ucl_player_dash&#47;Dashboard2&#47;1_rss.png' style='border: none' />
+                            <img alt='COMPARE_PLAYER ' src='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard2/1_rss.png' style='border: none' />
                         </a>
                     </noscript>
                     <object class='tableauViz' style='width:100%;min-height:800px;height:100%;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
-                        <param name='name' value='ucl_player_dash&#47;Dashboard2' />
+                        <param name='name' value='ucl_player_dash/Dashboard2' />
                         <param name='tabs' value='no' />
                         <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;uc&#47;ucl_player_dash&#47;Dashboard2&#47;1.png' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/uc/ucl_player_dash/Dashboard2/1.png' />
                         <param name='animate_transition' value='yes' />
                         <param name='display_static_image' value='yes' />
                         <param name='display_spinner' value='yes' />
@@ -217,7 +414,6 @@
             </div>
         </section>
 
-        <!-- Section 3: Python Demo -->
         <section class="mb-12 p-6 bg-green-50 rounded-lg shadow-md">
             <h2 class="text-3xl font-bold text-green-800 mb-4 text-center">Python Demo: Dynamic Visualization</h2>
             <div class="text-gray-700 space-y-4">
@@ -225,19 +421,14 @@
                     This section will feature a dynamic visualization created using Python. It aims to provide a unique and interactive perspective on the data that complements our static dashboards.
                 </p>
                 <div class="video-container mt-8">
-                    <!-- REPLACE 'YOUR_VIDEO_FILE_URL.mp4' with the actual URL of your video from GitHub -->
-<!--                     <video controls width="80%" height="80%" poster="https://placehold.co/640x360/cccccc/333333?text=Video+Thumbnail"> -->
                     <video controls width="80%" height="80%">
                         <source src="Python Demostration.mp4" type="video/mp4">
                         <div class="video-placeholder-text">Your browser does not support the video tag.</div>
                     </video>
-                    <!-- Alternatively, if using YouTube/Vimeo, use their embed code here: -->
-                    <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                </div>
+                    </div>
             </div>
         </section>
-        
-        <!-- Section 4: Team Members -->
+
         <section class="mb-12 p-6 bg-pink-50 rounded-lg shadow-md">
             <h2 class="text-3xl font-bold text-pink-800 mb-4 text-center">Our Team</h2>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
